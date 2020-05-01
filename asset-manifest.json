@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/movie-explorer/static/css/main.d1b05096.chunk.css",
+    "main.js": "/movie-explorer/static/js/main.4ebf3a1c.chunk.js",
+    "main.js.map": "/movie-explorer/static/js/main.4ebf3a1c.chunk.js.map",
+    "runtime-main.js": "/movie-explorer/static/js/runtime-main.e081a273.js",
+    "runtime-main.js.map": "/movie-explorer/static/js/runtime-main.e081a273.js.map",
+    "static/js/2.72ab27d9.chunk.js": "/movie-explorer/static/js/2.72ab27d9.chunk.js",
+    "static/js/2.72ab27d9.chunk.js.map": "/movie-explorer/static/js/2.72ab27d9.chunk.js.map",
+    "index.html": "/movie-explorer/index.html",
+    "precache-manifest.9fd2fd831a2d8033b9f86ba472391053.js": "/movie-explorer/precache-manifest.9fd2fd831a2d8033b9f86ba472391053.js",
+    "service-worker.js": "/movie-explorer/service-worker.js",
+    "static/css/main.d1b05096.chunk.css.map": "/movie-explorer/static/css/main.d1b05096.chunk.css.map",
+    "static/js/2.72ab27d9.chunk.js.LICENSE.txt": "/movie-explorer/static/js/2.72ab27d9.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/movie-explorer/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e081a273.js",
+    "static/js/2.72ab27d9.chunk.js",
+    "static/css/main.d1b05096.chunk.css",
+    "static/js/main.4ebf3a1c.chunk.js"
+  ]
+}
