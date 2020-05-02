@@ -1,0 +1,39 @@
+.Movie {
+  height: 550px;
+  flex-basis: 20%;
+  -ms-flex: auto;
+  width: 259px;
+  position: relative;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.item {
+  width: 100%;
+  height: 100%;
+  background-color: red;
+}
+
+@media(max-width: 1333px) {
+  .Movie {
+    flex-basis: 33.33%;
+  }
+}
+
+@media(max-width: 1073px) {
+    .Movie {
+    flex-basis: 33.33%;
+  }
+}
+
+@media(max-width: 815px) {
+  .Movie {
+    flex-basis: 50%;
+  }
+}
+
+@media(max-width: 555px) {
+  .Movie {
+    flex-basis: 100%;
+  }
+}

@@ -1,39 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
+import Navbar from '../navbar/Navbar'
+import Results from '../results/Results'
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header>
-        <div className="navbar">
-          <div className="container-max-width">
-            <div className="container-search">
-              <input type="text" placeholder="Type something to search..." />
-            </div>
-          </div>
-        </div>
-      </header>
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <header>
+          <Navbar />
+        </header>
 
-      <section>
-        <div className="container-results container-max-width">
-          <div className="grid-row">
-            <div className="grid-item"><div className="item"></div></div>
-            <div className="grid-item"><div className="item"></div></div>
-            <div className="grid-item"><div className="item"></div></div>
-            <div className="grid-item"><div className="item"></div></div>
-            <div className="grid-item"><div className="item"></div></div>
-            <div className="grid-item"><div className="item"></div></div>
-            <div className="grid-item"><div className="item"></div></div>
-            <div className="grid-item"><div className="item"></div></div>
-            <div className="grid-item"><div className="item"></div></div>
-            <div className="grid-item"><div className="item"></div></div>
-            <div className="grid-item"><div className="item"></div></div>
-            <div className="grid-item"><div className="item"></div></div>
-          </div>
-        </div>
-      </section>
-    </div>
-  );
+        <section>
+          <Results />
+        </section>
+      </div>
+    )
+  };
 }
 
 export default App;
