@@ -10,6 +10,7 @@
     "flexbox-react": "^4.4.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-redux": "^7.2.0",
     "react-scripts": "3.4.1"
   },
   "scripts": {
@@ -36,8 +37,10 @@
     ]
   },
   "devDependencies": {
-    "bootstrap": "^4.4.1",
     "gh-pages": "^2.2.0",
-    "react-bootstrap": "^1.0.1"
+    "react-bootstrap": "^1.0.1",
+    "react-redeux": "^1.0.4",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0"
   }
 }

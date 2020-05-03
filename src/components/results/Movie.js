@@ -6,7 +6,7 @@ class Movie extends Component {
     return (
       <div className="Movie">
         <div className="item">
-
+          <h3>{this.props.title}</h3>
         </div>
       </div>
     )

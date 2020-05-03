@@ -1,20 +1,25 @@
 import React, { Component } from 'react';
-import Navbar from '../navbar/Navbar'
-import Results from '../results/Results'
+import { Provider } from 'react-redux';
 import './App.css';
+
+import Navbar from '../navbar/Navbar';
+import Results from '../results/Results';
+import store from '../../store'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header>
-          <Navbar />
-        </header>
+      <Provider store={store}>
+        <div className="App">
+          <header>
+            <Navbar />
+          </header>
 
-        <section>
-          <Results />
-        </section>
-      </div>
+          <section>
+            <Results />
+          </section>
+        </div>
+      </Provider>
     )
   };
 }
