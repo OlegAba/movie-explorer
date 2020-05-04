@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { createPost } from '../../actions/postActions';
+import { createPost, fetchMovies } from '../../actions/postActions';
 import './Navbar.css';
 
 class Navbar extends Component {
@@ -16,18 +16,21 @@ class Navbar extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-  onChange(e) {
-    this.setState({ [e.target.name]: e.target.value });
+  onChange(event) {
+    this.setState({ [event.target.name]: event.target.value });
   }
 
-  onSubmit(e) {
-    e.preventDefault();
+  onSubmit(event) {
+    event.preventDefault();
 
     const post = {
       title: this.state.title
     }
 
-    this.props.createPost(post);
+    const title = this.state.title
+    if (title) {
+      this.props.fetchMovies(this.state.title);
+    };
   }
 
   render() {
@@ -53,7 +56,8 @@ class Navbar extends Component {
 }
 
 Navbar.propTypes = {
-  createPost: PropTypes.func.isRequired
+  fetchMovies: PropTypes.func.isRequired
+  //createPost: PropTypes.func.isRequired
 }
 
-export default connect(null, { createPost })(Navbar);
+export default connect(null, { fetchMovies })(Navbar);
