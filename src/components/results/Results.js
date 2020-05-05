@@ -19,25 +19,25 @@ class Results extends Component {
   // }
 
   render() {
-    // const movieItems = this.props.movies.map((post, index) => (
-    //   <Movie key={index} title={post.Title}/>
-    // ));
-
-    // return (
-    //   <div className="Results container-max-width">
-    //     <div className="grid-row">
-    //       {movieItems}
-    //     </div>
-    //   </div>
-    // )
+    const movieItems = this.props.movies.map((post, index) => (
+      <Movie key={index} title={post.Title}/>
+    ));
 
     return (
       <div className="Results container-max-width">
         <div className="grid-row">
-          <Movie />
+          {movieItems}
         </div>
       </div>
     )
+
+    // return (
+    //   <div className="Results container-max-width">
+    //     <div className="grid-row">
+    //       <Movie />
+    //     </div>
+    //   </div>
+    // )
   };
 }
 

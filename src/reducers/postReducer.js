@@ -1,27 +1,29 @@
-import { FETCH_POSTS, NEW_POST, FETCH_MOVIES } from '../actions/types';
+import { MOVIE_REQUESTED, MOVIE_RECEIVED, MOVIE_FAILED } from '../actions/types';
 
 const initialState = {
+    status: "",
+    //TODO: Change movies to data globally
     movies: [],
-    items: [],
-    item: {}
 }
 
 export default function(state = initialState, action) {
     switch(action.type) {
-        case FETCH_POSTS:
+        case MOVIE_REQUESTED:
             return {
                 ...state,
-                items: action.payload
+                status: "Waiting for data..."
             }
-        case NEW_POST:
+        case MOVIE_RECEIVED:
             return {
                 ...state,
-                item: action.payload
-            }
-        case FETCH_MOVIES:
-            return {
-                ...state,
+                status: "Received data",
                 movies: action.payload
+            }
+        case MOVIE_FAILED:
+            return {
+                ...state,
+                status: "Failed",
+                error: action.payload
             }
         default:
             return state

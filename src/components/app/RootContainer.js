@@ -9,11 +9,7 @@ import Results from '../results/Results';
 class RootContainer extends Component {
 
   componentDidMount() {
-      this.props.fetchRandomMovies(10);
-
-      setTimeout(function() {
-        console.log(this.state);
-      }, 5000);
+    this.props.fetchRandomMovies(10);
   }
 
   render() {

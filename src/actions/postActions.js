@@ -1,45 +1,30 @@
-import { FETCH_POSTS, NEW_POST, FETCH_MOVIES } from './types';
+import { MOVIE_REQUESTED, MOVIE_RECEIVED, MOVIE_FAILED } from './types';
 import { getMovies, getRandomMovies } from '../utilities/api'
 
-export const fetchPosts = () => dispatch => {
-    fetch('https://jsonplaceholder.typicode.com/posts')
-        .then(res => res.json())
-        .then(posts => dispatch({
-            type: FETCH_POSTS,
-            payload: posts
-        })
-    );
-};
-
-export const createPost = (postData) => dispatch => {
-    fetch('https://jsonplaceholder.typicode.com/posts', {
-        method: 'POST',
-        headers: {
-            'content-type': 'application/json'
-        },
-        body: JSON.stringify(postData)
-    })
-        .then(res => res.json())
-        .then(post => dispatch({
-            type: NEW_POST,
-            payload: post 
-        }));
-};
-
 export const fetchMovies = (title) => dispatch => {
-    getMovies(title).then(data => dispatch({
-        type: FETCH_MOVIES,
-        payload: data,
-    })).catch(error => {
-        console.log(error);
+    dispatch({
+        type: MOVIE_REQUESTED,
     });
+
+    getMovies(title).then(data => dispatch({
+        type: MOVIE_RECEIVED,
+        payload: data,
+    })).catch(error => dispatch({
+        type: MOVIE_FAILED,
+        payload: error
+    }));
 }
 
 export const fetchRandomMovies = (amount) => dispatch => {
+    dispatch({
+        type: MOVIE_REQUESTED,
+    });
+    
     getRandomMovies(amount).then(data => dispatch({
-        type: FETCH_MOVIES,
+        type: MOVIE_RECEIVED,
         payload: data,
-    })).catch(error => {
-        console.log(error);
-    })
+    })).catch(error => dispatch({
+        type: MOVIE_FAILED,
+        payload: error
+    }));
 }
