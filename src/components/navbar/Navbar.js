@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { createPost, fetchMovies } from '../../actions/postActions';
+import { fetchMovies } from '../../actions/postActions';
 import './Navbar.css';
 
 class Navbar extends Component {
@@ -22,10 +22,6 @@ class Navbar extends Component {
 
   onSubmit(event) {
     event.preventDefault();
-
-    const post = {
-      title: this.state.title
-    }
 
     const title = this.state.title
     if (title) {

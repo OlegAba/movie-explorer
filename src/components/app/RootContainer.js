@@ -9,7 +9,7 @@ import Results from '../results/Results';
 class RootContainer extends Component {
 
   componentDidMount() {
-    this.props.fetchRandomMovies(10);
+    this.props.fetchRandomMovies(2);
   }
 
   render() {

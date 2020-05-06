@@ -5,12 +5,14 @@ export async function getMovies(title) {
     const titleQuery = `&s=${title}`;
     const endpointUrl = baseURL + titleQuery;
 
+    console.log(endpointUrl);
+
     let response = await fetch(endpointUrl).catch(error => {
         throw error;
     });
 
     let data = await response.json();
-    if (data.Response == "False") {
+    if (data.Response === "False") {
         throw data.Error;
     }
 
@@ -31,7 +33,7 @@ export async function getRandomMovies(amount) {
         });
 
         let data = await response.json();
-        if (data.Response == "False") {
+        if (data.Response === "False") {
             continue;
         }
 
@@ -41,6 +43,7 @@ export async function getRandomMovies(amount) {
     return movies;
 }
 
+// TODO: Move to a utilites file
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);

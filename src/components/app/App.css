@@ -24,4 +24,5 @@ body {
 .Results {
   /* navbar height is 100px */
   padding-top: 115px;
+  padding-bottom: 25px;
 }

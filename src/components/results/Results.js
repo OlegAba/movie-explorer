@@ -1,26 +1,30 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { fetchPosts, fetchMovies } from '../../actions/postActions';
+import { deleteMovie } from '../../actions/postActions';
 import Movie from './Movie';
 import './Results.css';
 
 class Results extends Component {
 
-  // componentWillMount() {
-  //   //this.props.fetchPosts()
-  //   this.props.fetchMovies("Inception");
-  // }
+  constructor(props) {
+    super(props);
+    this.deleteMovie = this.deleteMovie.bind(this);
+  }
 
-  // componentWillReceiveProps(nextProps) {
-  //   if (nextProps.newPost) {
-  //     this.props.posts.unshift(nextProps.newPost);
-  //   }
-  // }
+  deleteMovie(index) {
+    this.props.deleteMovie(index);
+  }
 
   render() {
-    const movieItems = this.props.movies.map((post, index) => (
-      <Movie key={index} title={post.Title}/>
+    const movieItems = this.props.movies.map((movie, index) => (
+      <Movie 
+      key={index}
+      id={index}
+      poster={movie.Poster}
+      title={movie.Title}
+      year={movie.Year}
+      onClick={this.deleteMovie}/>
     ));
 
     return (
@@ -30,23 +34,11 @@ class Results extends Component {
         </div>
       </div>
     )
-
-    // return (
-    //   <div className="Results container-max-width">
-    //     <div className="grid-row">
-    //       <Movie />
-    //     </div>
-    //   </div>
-    // )
   };
 }
 
 Results.propTypes = {
-  //fetchPosts: PropTypes.func.isRequired,
-  fetchMovies: PropTypes.func.isRequired,
   movies: PropTypes.array.isRequired
-  //posts: PropTypes.array.isRequired,
-  //newPost: PropTypes.object
 };
 
 const mapStateToProps = state => ({
@@ -54,4 +46,4 @@ const mapStateToProps = state => ({
 })
 
 //export default connect(mapStateToProps, { fetchPosts })(Results);
-export default connect(mapStateToProps, { fetchMovies })(Results);
+export default connect(mapStateToProps, { deleteMovie })(Results);

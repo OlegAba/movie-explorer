@@ -1,6 +1,5 @@
 .Movie {
-  height: 550px;
-  flex-basis: 20%;
+  flex-basis: 25%;
   -ms-flex: auto;
   width: 259px;
   position: relative;
@@ -9,9 +8,54 @@
 }
 
 .item {
+  position: relative;
   width: 100%;
   height: 100%;
-  background-color: red;
+}
+
+.item img {
+  border-radius: 10px;
+  width: 100%;
+  object-fit: contain;
+}
+
+.icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 30px;
+  padding: 5px;
+  border-width: 1px;
+  border-color: white;
+  border-style: solid;
+}
+
+.item h1 {
+  width: 100%;
+  color: #fff;
+  font-size: 20px;
+  line-height: 40px;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.item h2 {
+  color: #949494;
+  font-size: 15px;
+}
+
+.container-placeholder {
+  width: 100%;
+  height: 58px;
+}
+
+.container-text {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
 }
 
 @media(max-width: 1333px) {
