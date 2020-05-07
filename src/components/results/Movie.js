@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CloseIcon from 'react-ionicons/lib/MdClose';
+
 import unavailableImage from '../../assets/unavailable-image.jpg'
 import './Movie.css';
 

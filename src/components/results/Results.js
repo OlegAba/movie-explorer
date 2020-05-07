@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { deleteMovie } from '../../actions/postActions';
+
+import { deleteMovie } from '../../actions/movieActions';
 import Movie from './Movie';
 import './Results.css';
 
@@ -38,12 +39,12 @@ class Results extends Component {
 }
 
 Results.propTypes = {
-  movies: PropTypes.array.isRequired
+  movies: PropTypes.array.isRequired,
+  deleteMovie: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
-  movies: state.posts.movies
+  movies: state.data.movies
 })
 
-//export default connect(mapStateToProps, { fetchPosts })(Results);
 export default connect(mapStateToProps, { deleteMovie })(Results);

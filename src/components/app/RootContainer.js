@@ -1,12 +1,39 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './App.css';
-import { fetchRandomMovies } from '../../actions/postActions';
+import PropTypes from 'prop-types';
 import { css } from '@emotion/core';
 import ClipLoader from 'react-spinners/BarLoader'
 
 import Navbar from '../navbar/Navbar';
 import Results from '../results/Results';
+import { fetchRandomMovies } from '../../actions/movieActions';
+
+class RootContainer extends Component {
+
+  componentDidMount() {
+    this.props.fetchRandomMovies(10);
+  }
+
+  render() {
+    const clipLoader = 
+    <div className="container-loader container-max-width">
+      <ClipLoader css={override} size={25} color={'#2f8be6'} loading={this.props.isLoading} />
+    </div>
+
+    return (
+      <div className="RootContainer">
+        <header>
+          <Navbar />
+        </header>
+
+        <section>
+          {clipLoader}
+          <Results />
+        </section>
+      </div>
+    )
+  };
+}
 
 const override = css`
   display: block;
@@ -15,38 +42,13 @@ const override = css`
   width: 100%;
 `;
 
-class RootContainer extends Component {
-
-  componentDidMount() {
-    this.props.fetchRandomMovies(1);
-  }
-
-  render() {
-    const clipLoader = 
-    <div className="container-loader container-max-width">
-      <ClipLoader css={override} size={25} color={'#fff'} loading={this.props.isLoading} />
-    </div>
-
-    return (
-        <div className="RootContainer">
-          <header>
-            <Navbar />
-          </header>
-
-          <section>
-            {clipLoader}
-            <Results />
-            {/* {this.props.isLoading ? clipLoader : <Results />} */}
-          </section>
-        </div>
-    )
-  };
-}
+RootContainer.propTypes = {
+  fetchRandomMovies: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool.isRequired
+};
 
 const mapStateToProps = state => ({
-    isLoading: state.posts.isLoading,
-    movies: state.posts.movies
+  isLoading: state.data.isLoading,
 })
 
-//export default RootContainer;
 export default connect(mapStateToProps, { fetchRandomMovies })(RootContainer);

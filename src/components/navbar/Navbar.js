@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { fetchMovies } from '../../actions/postActions';
 import SearchIcon from 'react-ionicons/lib/MdSearch';
+
+import { fetchMovies } from '../../actions/movieActions';
 import './Navbar.css';
 
 class Navbar extends Component {
@@ -26,7 +27,7 @@ class Navbar extends Component {
 
     const title = this.state.title
     if (title) {
-      this.props.fetchMovies(this.state.title);
+      this.props.fetchMovies(title);
     };
   }
 
@@ -56,7 +57,6 @@ class Navbar extends Component {
 
 Navbar.propTypes = {
   fetchMovies: PropTypes.func.isRequired
-  //createPost: PropTypes.func.isRequired
 }
 
 export default connect(null, { fetchMovies })(Navbar);
