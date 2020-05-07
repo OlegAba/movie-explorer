@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import RemoveIcon from 'react-ionicons/lib/MdClose';
+import CloseIcon from 'react-ionicons/lib/MdClose';
 import unavailableImage from '../../assets/unavailable-image.jpg'
 import './Movie.css';
 
@@ -26,7 +26,7 @@ class Movie extends Component {
       <div className="Movie">
         <div className="item">
           <img src={this.props.poster} onError={this.onError} alt="poster" />
-          <RemoveIcon className="icon" onClick={this.onClick} color="#ff443a" fontSize="20px" />
+          <CloseIcon className="icon" onClick={this.onClick} color="#ff443a" fontSize="20px" />
           <div className="container-placeholder"></div>
           <div className="container-text">
             <h1>{this.props.title}</h1>

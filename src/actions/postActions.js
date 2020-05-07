@@ -1,7 +1,11 @@
-import { MOVIE_REQUESTED, MOVIE_RECEIVED, MOVIE_FAILED, DELETE_MOVIE } from './types';
+import { USER_SEARCHED, MOVIE_REQUESTED, MOVIE_RECEIVED, RANDOM_MOVIE_RECEIVED, MOVIE_FAILED, DELETE_MOVIE } from './types';
 import { getMovies, getRandomMovies } from '../utilities/api'
 
 export const fetchMovies = (title) => dispatch => {
+    dispatch({
+        type: USER_SEARCHED,
+    });
+
     dispatch({
         type: MOVIE_REQUESTED,
     });
@@ -21,7 +25,7 @@ export const fetchRandomMovies = (amount) => dispatch => {
     });
     
     getRandomMovies(amount).then(data => dispatch({
-        type: MOVIE_RECEIVED,
+        type: RANDOM_MOVIE_RECEIVED,
         payload: data,
     })).catch(error => dispatch({
         type: MOVIE_FAILED,

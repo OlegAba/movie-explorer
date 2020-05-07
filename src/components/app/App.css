@@ -22,7 +22,11 @@ body {
 }
 
 .Results {
+  padding-bottom: 25px;
+}
+
+.container-loader {
   /* navbar height is 100px */
   padding-top: 115px;
-  padding-bottom: 25px;
+  height: 5px;
 }

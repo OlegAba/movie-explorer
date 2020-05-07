@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchMovies } from '../../actions/postActions';
+import SearchIcon from 'react-ionicons/lib/MdSearch';
 import './Navbar.css';
 
 class Navbar extends Component {
@@ -40,9 +41,11 @@ class Navbar extends Component {
                   name="title"
                   onChange={this.onChange}
                   value={this.state.title} 
-                  placeholder="Type something to search..." 
+                  placeholder="Type a movie to search..." 
                 />
-                <button type="search">Search</button>
+                <button type="search">
+                  <SearchIcon color="#fff" fontSize="30px" />
+                </button>
               </form>
             </div>
         </div>

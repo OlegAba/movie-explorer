@@ -26,9 +26,7 @@
   background: rgba(0, 0, 0, 0.7);
   border-radius: 30px;
   padding: 5px;
-  border-width: 1px;
-  border-color: white;
-  border-style: solid;
+  cursor: pointer;
 }
 
 .item h1 {

@@ -37,11 +37,13 @@
     ]
   },
   "devDependencies": {
+    "@emotion/core": "^10.0.28",
     "gh-pages": "^2.2.0",
     "masonry-layout": "^4.2.2",
     "react-bootstrap": "^1.0.1",
     "react-ionicons": "^3.1.4",
     "react-redeux": "^1.0.4",
+    "react-spinners": "^0.8.3",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0"
   }

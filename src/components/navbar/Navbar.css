@@ -25,13 +25,10 @@ form input:focus {
 }
 
 form button {
-  padding: 0 27px;
-  height: 40px;
-  border-radius: 4px;
-  color: #fff;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 11px;
+  padding: 10px;
+  border-radius: 30px;
   background: linear-gradient(-180deg, #399dff 0%, #2f8be6 98%);
   border: none;
+  outline: none;
+  cursor: pointer;
 }
