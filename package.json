@@ -10,7 +10,6 @@
     "flexbox-react": "^4.4.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-redux": "^7.2.0",
     "react-scripts": "3.4.1"
   },
   "scripts": {
@@ -40,7 +39,7 @@
     "@emotion/core": "^10.0.28",
     "gh-pages": "^2.2.0",
     "react-ionicons": "^3.1.4",
-    "react-redeux": "^1.0.4",
+    "react-redux": "^7.2.0",
     "react-spinners": "^0.8.3",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0"
