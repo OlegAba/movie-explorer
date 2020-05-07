@@ -1,3 +1,5 @@
+# [DEMO](http://oleg-movie-explorer.herokuapp.com/)
+
 ## Installation
 We use [NPM](https://www.npmjs.com/get-npm) for our dependency manager. This should be installed before continuing.
 
